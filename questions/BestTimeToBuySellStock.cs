@@ -3,7 +3,7 @@ namespace LeetCode30DayChallenge.Questions
     public class BestTimeToBuySellStock
     {
         // Time O(n)
-        // Space O(n)
+        // Space O(1)
         public static int MaxProfit(int[] prices)
         {
             // since there can be any number of transaction so just preserve the profit when there is any.
