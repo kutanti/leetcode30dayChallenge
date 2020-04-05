@@ -5,6 +5,7 @@ namespace LeetCode30DayChallenge.Questions
     {
         // Time - O(n)
         // Space - O(n)
+        // Question Link: https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/528/week-1/3283/
         public static int SingleNumber(int[] nums)
         {
             if (nums == null || nums.Length == 0)

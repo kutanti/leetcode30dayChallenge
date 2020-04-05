@@ -6,6 +6,7 @@ namespace LeetCode30DayChallenge.Questions
     {
         // Time varries from number to number.
         // Space varries from number to number.
+        // Question Link: https://leetcode.com/explore/challenge/card/30-day-leetcoding-challenge/528/week-1/3284/
         public static bool IsHappy(int n)
         {
             int prevSum = digitsquaresum(n);
