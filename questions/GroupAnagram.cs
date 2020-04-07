@@ -4,7 +4,7 @@ namespace LeetCode30DayChallenge.Questions
     using System;
     public class Solution
     {
-        public static IList<IList<string>> GroupAnagramsBruteForce(string[] strs)
+        public static IList<IList<string>> GroupAnagrams(string[] strs)
         {
             Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
 
