@@ -6,6 +6,8 @@ namespace LeetCode30DayChallenge.Questions
         /*
         Given two strings S and T, return if they are equal when both are typed into empty text editors. # means a backspace character.
         */
+
+        // Brute Force.
         public static bool BackspaceCompare(string S, string T)
         {
 
@@ -48,6 +50,84 @@ namespace LeetCode30DayChallenge.Questions
             }
 
             return q.Count == 0 ? true : false;
+        }
+
+
+        // Optimized.
+        public static bool BackspaceCompareOptimized(string S, string T)
+        {
+            // Time : O(n)
+            // Space : O(1)
+
+            //find the last character of each strings.
+            // compare both
+            // if true proceed, else return false.
+            int lastS = S.Length - 1;
+            int lastT = T.Length - 1;
+
+
+            int hash = 0;
+            while (lastS >= 0 || lastT >= 0)
+            {
+
+                while (lastS >= 0)
+                {
+                    if (S[lastS] == '#')
+                    {
+                        hash++;
+                        lastS--;
+                    }
+                    else if (hash > 0)
+                    {
+                        hash--;
+                        lastS--;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                hash = 0;
+                while (lastT >= 0)
+                {
+                    if (T[lastT] == '#')
+                    {
+                        hash++;
+                        lastT--;
+                    }
+                    else if (hash > 0)
+                    {
+                        hash--;
+                        lastT--;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                if (lastS == -1 && lastT == -1)
+                {
+                    // if both become empty.
+                    return true;
+                }
+                else if (lastS == -1 || lastT == -1)
+                {
+                    // if one become empty.
+                    return false;
+                }
+                // compare character of both string from the end.
+                if (S[lastS] != T[lastT])
+                {
+                    return false;
+                }
+                lastS--;
+                lastT--;
+            }
+
+            return true;
+
         }
     }
 }
