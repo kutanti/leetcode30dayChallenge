@@ -7,7 +7,7 @@ namespace LeetCode30DayChallenge.Questions
         Given two strings S and T, return if they are equal when both are typed into empty text editors. # means a backspace character.
         */
 
-        // Brute Force.
+        // Brute Force. Accepted
         public static bool BackspaceCompare(string S, string T)
         {
 
@@ -53,7 +53,7 @@ namespace LeetCode30DayChallenge.Questions
         }
 
 
-        // Optimized.
+        // Optimized. Accepted
         public static bool BackspaceCompareOptimized(string S, string T)
         {
             // Time : O(n)
