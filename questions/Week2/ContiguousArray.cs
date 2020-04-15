@@ -87,14 +87,17 @@ namespace LeetCode30DayChallenge.Questions
             {
                 return 0;
             }
-            //tracking the progess while iterating for each element, if 0 , then -1 and if 1 then +1.
+            
             int value = 0;
             int maxlen = 0;
             Dictionary<int, int> dict = new Dictionary<int, int>();
             dict.Add(0, 0);
             for (int i = 0; i < nums.Length; i++)
             {
+                //tracking the progess while iterating each element, if 0 , then -1 and if 1 then +1.
                 value = nums[i] == 0 ? value - 1 : value + 1;
+                
+                // adding the value as Key and checking the distance between the indices with same value.
 
                 if (dict.ContainsKey(value))
                 {
