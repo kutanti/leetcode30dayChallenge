@@ -78,5 +78,35 @@ namespace LeetCode30DayChallenge.Questions
 
             return maxlen;
         }
+
+
+        public int FindMaxLengthOptimizedShortened(int[] nums)
+        {
+            // Accepted.
+            if (nums == null || nums.Length <= 1)
+            {
+                return 0;
+            }
+            //tracking the progess while iterating for each element, if 0 , then -1 and if 1 then +1.
+            int value = 0;
+            int maxlen = 0;
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            dict.Add(0, 0);
+            for (int i = 0; i < nums.Length; i++)
+            {
+                value = nums[i] == 0 ? value - 1 : value + 1;
+
+                if (dict.ContainsKey(value))
+                {
+                    maxlen = Math.Max(maxlen, i - dict[value] + 1);
+                }
+                else
+                {
+                    dict.Add(value, i + 1);
+                }
+            }
+
+            return maxlen;
+        }
     }
 }
