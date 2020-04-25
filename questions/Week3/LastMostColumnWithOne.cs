@@ -29,6 +29,8 @@ namespace LeetCode30DayChallenge.Questions
         // Accepted.
         public int LeftMostColumnWithOneAccepted(BinaryMatrix binaryMatrix)
         {
+            // Time - Worst Case O(n*m)
+            // Space - O(1)
 
             int rows = binaryMatrix.Dimensions()[0];
             int cols = binaryMatrix.Dimensions()[1];
@@ -55,6 +57,8 @@ namespace LeetCode30DayChallenge.Questions
 
         public int LeftMostColumnWithOne(BinaryMatrix binaryMatrix)
         {
+            // Time - O(n*log(m))
+            // Space - O(1)
             int l1 = binaryMatrix.Dimensions()[0];
             int l2 = binaryMatrix.Dimensions()[1] - 1;
 
