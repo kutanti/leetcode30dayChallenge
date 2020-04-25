@@ -1,9 +1,10 @@
 namespace LeetCode30DayChallenge.Questions
 {
-    // Time O(n)
-    // Space O(1)
+
     public class PreOrderToBST
     {
+        // Time O(n^2)
+        // Space O(1)
         public TreeNode BstFromPreorder(int[] preorder)
         {
 
@@ -33,6 +34,27 @@ namespace LeetCode30DayChallenge.Questions
             {
                 node.right = ConvertToBST(node.right, val);
             }
+            return node;
+        }
+
+        int start = 0;
+
+        // this is optimized, O(n) time.
+        private TreeNode preOrderToBstHelper(int[] preorder, int min, int max)
+        {
+            int n = preorder.Length;
+            if (start >= n)
+            {
+                return null;
+            }
+            if (preorder[start] < min || preorder[start] > max)
+            {
+                return null;
+            }
+            TreeNode node = new TreeNode(preorder[start]);
+            start++;
+            node.left = preOrderToBstHelper(preorder, min, node.val - 1);
+            node.right = preOrderToBstHelper(preorder, node.val + 1, max);
             return node;
         }
     }
